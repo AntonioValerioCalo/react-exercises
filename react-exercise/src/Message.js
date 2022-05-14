@@ -2,6 +2,6 @@ import React from "react";
 
 export class Message extends React.Component{
     render(){
-        return <p>What a beatiful day</p>
+        return <p>What a beatiful day </p>
     }
 }
