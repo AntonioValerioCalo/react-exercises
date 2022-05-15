@@ -6,7 +6,7 @@ export class Age extends React.Component {
       <div>
         {this.props.age > 18 && this.props.age < 65 && (
           <p>Your age is {this.props.age}</p>
-        )}
+         )} 
       </div>
     );
   }
