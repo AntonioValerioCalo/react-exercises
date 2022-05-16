@@ -1,4 +1,5 @@
 import React from "react";
+import { CounterDisplay } from "./CounterDisplay";
 
 export class Counter extends React.Component {
   state = {
@@ -15,7 +16,7 @@ export class Counter extends React.Component {
     }, this.props.timeOut);
   }
   render() {
-    return <p> count: {this.state.count}</p>;
+    return <CounterDisplay count={this.state.count}/>;
   }
 }
 Counter.defaultProps = {
