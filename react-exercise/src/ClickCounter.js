@@ -1,3 +1,4 @@
+
 import React from "react";
 
 export class ClickCounter extends React.Component {
@@ -18,3 +19,4 @@ export class ClickCounter extends React.Component {
     );
   }
 }
+
