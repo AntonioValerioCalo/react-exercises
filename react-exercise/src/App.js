@@ -2,7 +2,7 @@ import React from "react";
 
 
 import { ClickCounter } from "./ClickCounter";
-
+import { Login } from "./Login";
 import { ClickTrucker } from "./ClickTrucker";
 import { Hello } from "./Components-02";
 import { Counter } from "./Counter";
@@ -19,6 +19,7 @@ export class App extends React.Component {
         <ClickCounter/>
         <ClickTrucker/>
         <InteractiveWelcome/>
+        <Login/>
       </div>
     );
   }
