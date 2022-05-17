@@ -1,5 +1,5 @@
 import React from "react";
-
+import {ClickCounter} from "./ClickCounter"
 import { Hello } from "./Components-02";
 import { Counter } from "./Counter";
 import { Welcome } from "./Welcome";
@@ -11,6 +11,7 @@ export class App extends React.Component {
         <Hello />
         <Welcome name="John" otherAge={64} />
         <Counter />
+        <ClickCounter/>
       </div>
     );
   }
