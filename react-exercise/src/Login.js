@@ -1,8 +1,7 @@
 import React from "react";
-import { createRef } from "react";
 
 export class Login extends React.Component {
-  _formRef = createRef();
+
   state = {
     username: "",
     password: "",
@@ -14,9 +13,17 @@ export class Login extends React.Component {
     const type = event.target.type;
     const checked = event.target.checked;
     this.setState({
-      [name]: type === "checked" ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     });
   };
+
+  handleReset=()=>{
+    this.setState({
+        username:"",
+        password: "",
+        remember:false,
+    })
+  }
 
   render() {
     return (
@@ -46,9 +53,8 @@ export class Login extends React.Component {
         >
           Login
         </button>
+        <button type="reset" onClick={this.handleReset} >reset</button>
       </form>
     );
   }
 }
-
-
