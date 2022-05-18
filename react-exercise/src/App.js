@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import { ClickCounter } from "./ClickCounter";
 import { Login } from "./Login";
 import { ClickTrucker } from "./ClickTrucker";
@@ -9,6 +8,9 @@ import { Counter } from "./Counter";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Welcome } from "./Welcome";
 
+const onLogin = (state) => {
+  console.log(state);
+};
 export class App extends React.Component {
   render() {
     return (
@@ -16,10 +18,10 @@ export class App extends React.Component {
         <Hello />
         <Welcome name="John" otherAge={64} />
         <Counter />
-        <ClickCounter/>
-        <ClickTrucker/>
-        <InteractiveWelcome/>
-        <Login/>
+        <ClickCounter />
+        <ClickTrucker />
+        <InteractiveWelcome />
+        <Login handleState={onLogin} />
       </div>
     );
   }
