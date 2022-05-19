@@ -1,7 +1,6 @@
 import React from "react";
 
 export class Login extends React.Component {
-
   state = {
     username: "",
     password: "",
@@ -17,13 +16,13 @@ export class Login extends React.Component {
     });
   };
 
-  handleReset=()=>{
+  handleReset = () => {
     this.setState({
-        username:"",
-        password: "",
-        remember:false,
-    })
-  }
+      username: "",
+      password: "",
+      remember: false,
+    });
+  };
 
   render() {
     return (
@@ -53,7 +52,9 @@ export class Login extends React.Component {
         >
           Login
         </button>
-        <button type="reset" onClick={this.handleReset} >reset</button>
+        <button type="reset" onClick={this.handleReset}>
+          reset
+        </button>
       </form>
     );
   }

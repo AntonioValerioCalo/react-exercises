@@ -7,6 +7,7 @@ import { Hello } from "./Components-02";
 import { Counter } from "./Counter";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Welcome } from "./Welcome";
+import { UncontrolledLogin } from "./UncontrolledComponentLogin";
 
 const onLogin = (state) => {
   console.log(state);
@@ -22,6 +23,7 @@ export class App extends React.Component {
         <ClickTrucker />
         <InteractiveWelcome />
         <Login handleState={onLogin} />
+        <UncontrolledLogin/>
       </div>
     );
   }
