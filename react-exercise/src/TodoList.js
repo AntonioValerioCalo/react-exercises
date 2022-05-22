@@ -24,6 +24,12 @@ export class TodoList extends React.Component {
       name: [],
     });
   };
+  handleRemoveMember=()=>{
+        this.setState({
+       name:this.state.name.filter(member=> member !== this.state.getItem),
+       getItem:"",
+  })
+}
 
   render() {
     return (
@@ -46,6 +52,7 @@ export class TodoList extends React.Component {
           <button type="reset" onClick={this.handleReset}>
             reset
           </button>
+          <button type="button" onClick={this.handleRemoveMember}>remove member</button>
         </form>
       </div>
     );
