@@ -38,7 +38,7 @@ export class TodoList extends React.Component {
             Add
           </button>
         </form>
-        <h1></h1>
+       
         </div>
         
     );
