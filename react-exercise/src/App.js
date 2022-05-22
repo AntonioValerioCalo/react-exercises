@@ -8,22 +8,30 @@ import { Counter } from "./Counter";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Welcome } from "./Welcome";
 import { UncontrolledLogin } from "./UncontrolledComponentLogin";
+import { TodoList } from "./TodoList";
+
+
 
 const onLogin = (state) => {
   console.log(state);
 };
+
+
+
+
 export class App extends React.Component {
   render() {
     return (
       <div>
-        <Hello />
+        {/* <Hello />
         <Welcome name="John" otherAge={64} />
         <Counter />
         <ClickCounter />
         <ClickTrucker />
         <InteractiveWelcome />
         <Login handleState={onLogin} />
-        <UncontrolledLogin/>
+        <UncontrolledLogin/> */}
+        <TodoList item={["Antonio","Domenico"]}  /> 
       </div>
     );
   }
