@@ -1,6 +1,7 @@
-import React from "react";
+import React,{createRef} from "react";
 
 export class Login extends React.Component {
+_buttonRef=createRef();
   state = {
     username: "",
     password: "",
@@ -23,11 +24,12 @@ export class Login extends React.Component {
       remember: false,
     });
   };
-
+    
   render() {
+  
     return (
-      <form>
-        <input
+      <form  >
+        <input ref={this._buttonRef}
           name="username"
           value={this.state.username}
           onChange={this.handleInputChange}
@@ -46,8 +48,9 @@ export class Login extends React.Component {
         />
 
         <button
+       style={{background:this.state.username.length  < 8 ? "red" : "green"}}
           type="button"
-          disabled={!(this.state.username && this.state.password)}
+          // disabled={!(this.state.username && this.state.password)}
           onClick={() => this.props.handleState(this.state)}
         >
           Login
