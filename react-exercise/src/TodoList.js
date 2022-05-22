@@ -16,6 +16,7 @@ export class TodoList extends React.Component {
   handleOnClick = () => {
     this.setState({
       name: [...this.state.name, this.state.getItem],
+      getItem: "",
     });
   };
 
@@ -38,9 +39,7 @@ export class TodoList extends React.Component {
             Add
           </button>
         </form>
-       
-        </div>
-        
+      </div>
     );
   }
 }
