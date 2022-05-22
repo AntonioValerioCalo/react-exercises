@@ -44,7 +44,8 @@ export class TodoList extends React.Component {
           <button type="button" onClick={this.handleOnClick}>
             Add
           </button>
-          <button type="reset" onClick={this.handleReset}>reset</button>
+
+          
         </form>
       </div>
     );
