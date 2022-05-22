@@ -19,12 +19,11 @@ export class TodoList extends React.Component {
       getItem: "",
     });
   };
-  handleReset=(event)=>{
-    event.preventDefault()
-     this.setState(()=>{
-      return { name:[] }
-    })
-  }
+  handleReset = () => {
+    this.setState({
+      name: [],
+    });
+  };
 
   render() {
     return (
@@ -44,8 +43,9 @@ export class TodoList extends React.Component {
           <button type="button" onClick={this.handleOnClick}>
             Add
           </button>
-
-          
+          <button type="reset" onClick={this.handleReset}>
+            reset
+          </button>
         </form>
       </div>
     );
