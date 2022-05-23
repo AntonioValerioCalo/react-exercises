@@ -9,6 +9,7 @@ import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Welcome } from "./Welcome";
 import { UncontrolledLogin } from "./UncontrolledComponentLogin";
 import { TodoList } from "./TodoList";
+import { Container } from "./Container";
 
 
 
@@ -23,6 +24,8 @@ export class App extends React.Component {
   render() {
     return (
       <div>
+        <Container>
+
         <Hello />
         <Welcome name="John" otherAge={64} />
         <Counter />
@@ -32,6 +35,7 @@ export class App extends React.Component {
         <Login handleState={onLogin} />
         <UncontrolledLogin/>
         <TodoList item={["Antonio","Domenico"]}  /> 
+        </Container>
       </div>
     );
   }
