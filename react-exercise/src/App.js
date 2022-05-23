@@ -26,7 +26,8 @@ export class App extends React.Component {
       <div>
         <Container>
 
-        <Hello />
+        <Hello title="helloooooooooooooo"/>
+        </Container>
         <Welcome name="John" otherAge={64} />
         <Counter />
         <ClickCounter />
@@ -35,7 +36,6 @@ export class App extends React.Component {
         <Login handleState={onLogin} />
         <UncontrolledLogin/>
         <TodoList item={["Antonio","Domenico"]}  /> 
-        </Container>
       </div>
     );
   }
