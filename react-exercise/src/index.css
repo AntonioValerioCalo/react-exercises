@@ -1,5 +1,11 @@
+
 .welcome{
     background-color: #FFD57E;
     border-style: solid;
     border:10px,10px,10px,10px
+}
+.containerStyle{
+    border-style: solid;
+    border-color:red;
+     background-color: white;
 }
