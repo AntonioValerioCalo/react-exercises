@@ -10,6 +10,7 @@ import { Welcome } from "./Welcome";
 import { UncontrolledLogin } from "./UncontrolledComponentLogin";
 import { TodoList } from "./TodoList";
 import { Container } from "./Container";
+import { DisplayLanguage } from "./DisplayLanguage";
 
 
 
@@ -25,7 +26,7 @@ export class App extends React.Component {
     return (
       <div>
         <Container>
-
+          <DisplayLanguage/>
         <Hello title="helloooooooooooooo"/>
         </Container>
         <Welcome name="John" otherAge={64} />
