@@ -24,20 +24,20 @@ const onLogin = (state) => {
 
 export class App extends React.Component {
   state={
-    language:"en"
+    language:"it"
   }
   handleChangeLanguage=(event)=>{
     this.setState({
-      language:event.target.value
+      language:event.target.value,
     })
   }
   render() {
     return (
       <div>
-          <select value={this.state.language} onChange={this.handleChangeLanguages}>
-          <option value="en">English</option>
+          <select value={this.state.language} onChange={this.handleChangeLanguage}>
+          <option value="en" >English</option>
             <option value="it">Italiano</option>
-            <option value="de">Deutsch</option>
+            <option value="de" >Deutsch</option>
           </select>
           
         <LanguageContext.Provider value={this.state.language}>
