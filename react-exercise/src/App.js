@@ -36,7 +36,16 @@ export class App extends React.Component {
         <InteractiveWelcome />
         <Login handleState={onLogin} />
         <UncontrolledLogin/>
-        <TodoList item={["Antonio","Domenico"]}  /> 
+        <TodoList
+          render={getName=>{
+          const [...name]= getName
+          return(
+            <ul>
+              <li>{name}</li>
+            </ul>
+          )
+          }}
+        ></TodoList> 
       </div>
     );
   }

@@ -35,11 +35,12 @@ export class TodoList extends React.Component {
     return (
       <div>
         <h1>Todo List</h1>
-        <ul>
+        {this.props.render(this.state.name.map((name,index)=>(<li key={name + index}>{name}</li>)))}
+        {/* <ul>
           {this.state.name.map((name, index) => (
             <li key={name + index}>{name}</li>
           ))}
-        </ul>
+        </ul> */}
         <form ref={this._addedRef}>
           <input
             type="text"
@@ -54,6 +55,7 @@ export class TodoList extends React.Component {
           </button>
           <button type="button" onClick={this.handleRemoveMember}>remove member</button>
         </form>
+        
       </div>
     );
   }
