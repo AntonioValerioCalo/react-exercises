@@ -9,6 +9,9 @@ import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Welcome } from "./Welcome";
 import { UncontrolledLogin } from "./UncontrolledComponentLogin";
 import { TodoList } from "./TodoList";
+import { Container } from "./Container";
+import { DisplayLanguage } from "./DisplayLanguage";
+import { LanguageContext } from "./LanguageContext";
 
 
 
@@ -20,10 +23,30 @@ const onLogin = (state) => {
 
 
 export class App extends React.Component {
+  state={
+    language:"it"
+  }
+  handleChangeLanguage=(event)=>{
+    this.setState({
+      language:event.target.value,
+    })
+  }
   render() {
     return (
       <div>
-        <Hello />
+          <select value={this.state.language} onChange={this.handleChangeLanguage}>
+          <option value="en" >English</option>
+            <option value="it">Italiano</option>
+            <option value="de" >Deutsch</option>
+          </select>
+          
+        <LanguageContext.Provider value={this.state.language}>
+          <DisplayLanguage/>
+        </LanguageContext.Provider>
+
+        <Container>
+        <Hello title="helloooooooooooooo"/>
+        </Container>
         <Welcome name="John" otherAge={64} />
         <Counter />
         <ClickCounter />
@@ -31,12 +54,38 @@ export class App extends React.Component {
         <InteractiveWelcome />
         <Login handleState={onLogin} />
         <UncontrolledLogin/>
-        <TodoList item={["Antonio","Domenico"]}  /> 
+        <TodoList
+          render={getName=>{
+          const [...name]= getName
+          return(
+            <ul>
+              <li>{name}</li>
+            </ul>
+          )
+          }}
+        ></TodoList> 
       </div>
     );
   }
 }
 Welcome.defaultProps = {
   name: "John",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   age: 28,
 };
