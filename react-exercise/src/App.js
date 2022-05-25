@@ -12,6 +12,7 @@ import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { LanguageContext } from "./LanguageContext";
+import { Sum } from "./Sum";
 
 
 
@@ -63,7 +64,10 @@ export class App extends React.Component {
             </ul>
           )
           }}
-        ></TodoList> 
+        ></TodoList>
+        <Sum
+             number={[1,2,3,4,5]}     
+        /> 
       </div>
     );
   }
