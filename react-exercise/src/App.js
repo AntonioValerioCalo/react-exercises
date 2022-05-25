@@ -66,7 +66,7 @@ export class App extends React.Component {
           }}
         ></TodoList>
         <Sum
-             number={[1,2,3,4,5]}     
+            //  number={[1,2,3,4,5]}     
         /> 
       </div>
     );
