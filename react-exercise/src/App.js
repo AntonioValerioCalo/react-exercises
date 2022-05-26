@@ -41,7 +41,8 @@ export class App extends React.Component {
             <option value="de" >Deutsch</option>
           </select>
           
-        <LanguageContext.Provider value={this.state.language}>
+          <Login handleState={onLogin} />
+        {/* <LanguageContext.Provider value={this.state.language}>
           <DisplayLanguage/>
         </LanguageContext.Provider>
 
@@ -53,7 +54,6 @@ export class App extends React.Component {
         <ClickCounter />
         <ClickTrucker />
         <InteractiveWelcome />
-        <Login handleState={onLogin} />
         <UncontrolledLogin/>
         <TodoList
           render={getName=>{
@@ -65,9 +65,9 @@ export class App extends React.Component {
           )
           }}
         ></TodoList>
-        <Sum
-            //  number={[1,2,3,4,5]}     
-        /> 
+        <Sum */}
+            {/* //  number={[1,2,3,4,5]}     
+        />  */}
       </div>
     );
   }
