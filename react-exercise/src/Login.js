@@ -17,15 +17,18 @@ function handleInput(event){
     }
   })
 }
+function handleButton(){
+  setData(console.log(data))
+}
 
-
+console.log(data)
 
   return(
     <form>
       <input value={data.username} onChange={handleInput}  name="username"></input>
       <input value={data.password} onChange={handleInput} type="password" name="password"></input>
       <input value={data.remember} onChange={handleInput} type="checkbox" name="remember"/>
-      <button >
+      <button onClick={handleButton} >
         login
       </button>
     </form>
