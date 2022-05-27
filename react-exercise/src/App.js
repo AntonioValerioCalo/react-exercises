@@ -12,7 +12,6 @@ import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { LanguageContext } from "./LanguageContext";
-import { Sum } from "./Sum";
 
 
 
@@ -25,24 +24,23 @@ const onLogin = (state) => {
 
 export class App extends React.Component {
   state={
-    language:"it"
+    language:"en"
   }
   handleChangeLanguage=(event)=>{
     this.setState({
-      language:event.target.value,
+      language:event.target.value
     })
   }
   render() {
     return (
       <div>
-          <select value={this.state.language} onChange={this.handleChangeLanguage}>
+          <select value={this.state.language} onChange={this.handleChangeLanguages}>
           <option value="en" >English</option>
             <option value="it">Italiano</option>
             <option value="de" >Deutsch</option>
           </select>
           
-          <Login handleState={onLogin} />
-        {/* <LanguageContext.Provider value={this.state.language}>
+        <LanguageContext.Provider value={this.state.language}>
           <DisplayLanguage/>
         </LanguageContext.Provider>
 
@@ -54,6 +52,13 @@ export class App extends React.Component {
         <ClickCounter />
         <ClickTrucker />
         <InteractiveWelcome />
+        <Login 
+        initialValue={0}
+        // onCounterChange={function onCounterChange(counter){
+        //   console.log(`${counter}`)
+
+        // }}
+        />
         <UncontrolledLogin/>
         <TodoList
           render={getName=>{
@@ -64,10 +69,7 @@ export class App extends React.Component {
             </ul>
           )
           }}
-        ></TodoList>
-        <Sum */}
-            {/* //  number={[1,2,3,4,5]}     
-        />  */}
+        ></TodoList> 
       </div>
     );
   }
