@@ -12,6 +12,7 @@ import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { LanguageContext } from "./LanguageContext";
+import { GithubUser } from "./GithubUser";
 
 
 
@@ -70,6 +71,7 @@ export class App extends React.Component {
           )
           }}
         ></TodoList> 
+        <GithubUser username="AntonioValerioCalo"/>
       </div>
     );
   }
