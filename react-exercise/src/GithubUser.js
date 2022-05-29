@@ -1,7 +1,7 @@
 
 import { UseGithubuser } from "./UseGithubuser";
 export function GithubUser({username}){
-    const {data} = UseGithubuser(username);
+    const {data,load,error} = UseGithubuser(username);
 // const [data , setData] = useState(null);
 
 // useEffect(()=>{
@@ -18,6 +18,8 @@ export function GithubUser({username}){
 // },[username]) 
     return(
      <div>
+         {load && <h1>...loading</h1>}
+         {error && <h1>there has been error</h1>}
         {data &&<h1>{data.login}</h1>}
     </div>
     )
