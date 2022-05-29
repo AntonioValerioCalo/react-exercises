@@ -14,6 +14,7 @@ import { DisplayLanguage } from "./DisplayLanguage";
 import { LanguageContext } from "./LanguageContext";
 import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
+import { HookCounter } from "./HookCounter";
 
 
 
@@ -74,6 +75,7 @@ export class App extends React.Component {
         ></TodoList>  */}
         {/* <GithubUser username="AntonioValerioCalo"/> */}
         <GithubUserList/>
+        <HookCounter/>
       </div>
     );
   }
