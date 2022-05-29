@@ -17,6 +17,7 @@ import { GithubUserList } from "./GithubUserList";
 import { HookCounter } from "./HookCounter";
 import HookForm from "./HookForm";
 import { UseGithubuser } from "./UseGithubuser";
+import { FilteredList } from "./FilteredList";
 
 
 
@@ -80,7 +81,33 @@ export class App extends React.Component {
         {/* <HookCounter/> */}
         <HookForm/>
         <HookCounter/>
+       <FilteredList
+        users={[
+         {id:1,
+          name:"Antonio",
+          age:28,       
+        },
+        {
+          id:2,
+          name:"Verdiana",
+          age:27,
+        },
+        {
+          id:3,
+          name:"Marta",
+          age:8,
+        },
+        {
+          id:4,
+          name:"Alex",
+          age:5,
+        }
+
+      
+      
+      ]}
        
+       />
       </div>
     );
   }
