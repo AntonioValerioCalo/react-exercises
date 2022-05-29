@@ -15,12 +15,13 @@ import { LanguageContext } from "./LanguageContext";
 import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 import { HookCounter } from "./HookCounter";
+import HookForm from "./HookForm";
 
 
 
-const onLogin = (state) => {
-  console.log(state);
-};
+// const onLogin = (state) => {
+//   console.log(state);
+// };
 
 
 
@@ -43,39 +44,40 @@ export class App extends React.Component {
             <option value="de" >Deutsch</option>
           </select>
           
-        {/* <LanguageContext.Provider value={this.state.language}>
+        <LanguageContext.Provider value={this.state.language}>
           <DisplayLanguage/>
-        </LanguageContext.Provider>
-
-        <Container>
-        <Hello title="helloooooooooooooo"/>
-        </Container>
-        <Welcome name="John" otherAge={64} />
-        <Counter />
-        <ClickCounter />
-        <ClickTrucker />
-        <InteractiveWelcome />
-        <Login 
-        initialValue={0}
-        // onCounterChange={function onCounterChange(counter){
-        //   console.log(`${counter}`)
-
-        // }}
-        />
-        <UncontrolledLogin/>
-        <TodoList
+          </LanguageContext.Provider>
+          
+          <Container>
+          <Hello title="helloooooooooooooo"/>
+          </Container>
+          <Welcome name="John" otherAge={64} />
+          <Counter />
+          <ClickCounter 
+          initialValue={0}
+          // onCounterChange={function onCounterChange(counter){
+            //   console.log(`${counter}`)
+            
+            // }}
+          />
+          <ClickTrucker />
+          <InteractiveWelcome />
+          <Login/>
+          <UncontrolledLogin/>
+          <TodoList
           render={getName=>{
-          const [...name]= getName
-          return(
-            <ul>
+            const [...name]= getName
+            return(
+              <ul>
               <li>{name}</li>
             </ul>
           )
-          }}
-        ></TodoList>  */}
-        {/* <GithubUser username="AntonioValerioCalo"/> */}
+        }}
+        ></TodoList>  
+       <GithubUser username="AntonioValerioCalo"/>
         <GithubUserList/>
-        <HookCounter/>
+        {/* <HookCounter/> */}
+        <HookForm/>
       </div>
     );
   }
