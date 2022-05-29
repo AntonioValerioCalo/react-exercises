@@ -79,6 +79,7 @@ export class App extends React.Component {
         <GithubUserList/>
         {/* <HookCounter/> */}
         <HookForm/>
+        <HookCounter/>
        
       </div>
     );

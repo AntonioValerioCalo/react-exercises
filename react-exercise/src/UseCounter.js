@@ -14,10 +14,10 @@ export function useCounter(initialValue = 0) {
       setCounter(initialValue);
     }
   
-    return {
+    return [{
       counter: counter,
       onIncrement: handleIncrement,
       onDecrement: handleDecrement,
       onReset: handleReset,
-    };
+    }];
   }
