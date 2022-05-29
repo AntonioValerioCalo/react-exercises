@@ -16,7 +16,7 @@ useEffect(()=>{
 },[username]) 
     return(
      <div>
-        {data &&<h1>{data.user}</h1>}
+        {data &&<h1>{data.login}</h1>}
     </div>
     )
 }

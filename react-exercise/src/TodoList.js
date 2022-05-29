@@ -54,7 +54,7 @@ export class TodoList extends React.Component {
             reset
           </button>
           <button type="button" onClick={this.handleRemoveMember}>remove member</button>
-        </form>
+          </form>
         
       </div>
     );

@@ -13,6 +13,7 @@ import { Container } from "./Container";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { LanguageContext } from "./LanguageContext";
 import { GithubUser } from "./GithubUser";
+import { GithubUserList } from "./GithubUserList";
 
 
 
@@ -41,7 +42,7 @@ export class App extends React.Component {
             <option value="de" >Deutsch</option>
           </select>
           
-        <LanguageContext.Provider value={this.state.language}>
+        {/* <LanguageContext.Provider value={this.state.language}>
           <DisplayLanguage/>
         </LanguageContext.Provider>
 
@@ -70,8 +71,9 @@ export class App extends React.Component {
             </ul>
           )
           }}
-        ></TodoList> 
-        <GithubUser username="AntonioValerioCalo"/>
+        ></TodoList>  */}
+        {/* <GithubUser username="AntonioValerioCalo"/> */}
+        <GithubUserList/>
       </div>
     );
   }
