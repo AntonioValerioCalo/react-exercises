@@ -1,19 +1,21 @@
-import { useEffect, useState } from "react";
+
+import { UseGithubuser } from "./UseGithubuser";
 export function GithubUser({username}){
-const [data , setData] = useState(null);
+    const {data} = UseGithubuser(username);
+// const [data , setData] = useState(null);
 
-useEffect(()=>{
+// useEffect(()=>{
 
-    fetch(`https://api.github.com/users/${username}`)
-    .then(response=>{
-       return response.json()
-    })
-    .then(json=>{
-        console.log(json)
-        setData(json)
-    })
+//     fetch(`https://api.github.com/users/${username}`)
+//     .then(response=>{
+//        return response.json()
+//     })
+//     .then(json=>{
+//         console.log(json)
+//         setData(json)
+//     })
 
-},[username]) 
+// },[username]) 
     return(
      <div>
         {data &&<h1>{data.login}</h1>}
