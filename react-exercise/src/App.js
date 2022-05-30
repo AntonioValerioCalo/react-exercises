@@ -18,6 +18,7 @@ import { HookCounter } from "./HookCounter";
 import HookForm from "./HookForm";
 import { UseGithubuser } from "./UseGithubuser";
 import { FilteredList } from "./FilteredList";
+import { CarDetails } from "./CarDetails";
 
 
 
@@ -46,7 +47,7 @@ export class App extends React.Component {
             <option value="de" >Deutsch</option>
           </select>
           
-        <LanguageContext.Provider value={this.state.language}>
+        {/* <LanguageContext.Provider value={this.state.language}>
           <DisplayLanguage/>
           </LanguageContext.Provider>
           
@@ -79,7 +80,7 @@ export class App extends React.Component {
        <GithubUser username="AntonioValerioCalo"/>
         <GithubUserList/>
         {/* <HookCounter/> */}
-        <HookForm/>
+        {/* <HookForm/>
         <HookCounter/>
        <FilteredList
         users={[
@@ -107,7 +108,13 @@ export class App extends React.Component {
       
       ]}
        
-       />
+       />  */}
+
+       <CarDetails initialData={{
+              model: "",
+              year: "",
+              color: "",
+            }}/>
       </div>
     );
   }
