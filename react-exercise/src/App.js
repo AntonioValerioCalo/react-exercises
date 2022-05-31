@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { ClickCounter } from "./ClickCounter";
 import { Login } from "./Login";
@@ -12,80 +12,43 @@ import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { LanguageContext } from "./LanguageContext";
+import { GithubUser } from "./GithubUser";
+import { GithubUserList } from "./GithubUserList";
+import { HookCounter } from "./HookCounter";
+import HookForm from "./HookForm";
+import { UseGithubuser } from "./UseGithubuser";
+import { FilteredList } from "./FilteredList";
+import { CarDetails } from "./CarDetails";
 
 
 
-const onLogin = (state) => {
-  console.log(state);
-};
+// const onLogin = (state) => {
+//   console.log(state);
+// };
 
 
 
 
-export class App extends React.Component {
-  state={
-    language:"it"
+export function App () {
+  const [language,setLanguage] = useState("en")
+ const handleChangeLanguage=(event)=>{
+    setLanguage(
+      event.target.value
+    )
   }
-  handleChangeLanguage=(event)=>{
-    this.setState({
-      language:event.target.value,
-    })
-  }
-  render() {
+ 
     return (
       <div>
-          <select value={this.state.language} onChange={this.handleChangeLanguage}>
+          <select value={language} onChange={handleChangeLanguage}>
           <option value="en" >English</option>
             <option value="it">Italiano</option>
             <option value="de" >Deutsch</option>
           </select>
           
-        <LanguageContext.Provider value={this.state.language}>
+         <LanguageContext.Provider value={language}>
           <DisplayLanguage/>
-        </LanguageContext.Provider>
-
-        <Container>
-        <Hello title="helloooooooooooooo"/>
-        </Container>
-        <Welcome name="John" otherAge={64} />
-        <Counter />
-        <ClickCounter />
-        <ClickTrucker />
-        <InteractiveWelcome />
-        <Login handleState={onLogin} />
-        <UncontrolledLogin/>
-        <TodoList
-          render={getName=>{
-          const [...name]= getName
-          return(
-            <ul>
-              <li>{name}</li>
-            </ul>
-          )
-          }}
-        ></TodoList> 
-      </div>
-    );
-  }
-}
-Welcome.defaultProps = {
-  name: "John",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  age: 28,
-};
+          </LanguageContext.Provider>
+          
+          </div> 
+    )
+    } 
