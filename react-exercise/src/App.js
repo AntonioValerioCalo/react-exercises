@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { ClickCounter } from "./ClickCounter";
 import { Login } from "./Login";
@@ -29,114 +29,26 @@ import { CarDetails } from "./CarDetails";
 
 
 
-export class App extends React.Component {
-  state={
-    language:"en"
+export function App () {
+  const [language,setLanguage] = useState("en")
+ const handleChangeLanguage=(event)=>{
+    setLanguage(
+      event.target.value
+    )
   }
-  handleChangeLanguage=(event)=>{
-    this.setState({
-      language:event.target.value
-    })
-  }
-  render() {
+ 
     return (
       <div>
-          <select value={this.state.language} onChange={this.handleChangeLanguages}>
+          <select value={language} onChange={handleChangeLanguage}>
           <option value="en" >English</option>
             <option value="it">Italiano</option>
             <option value="de" >Deutsch</option>
           </select>
           
-        {/* <LanguageContext.Provider value={this.state.language}>
+         <LanguageContext.Provider value={language}>
           <DisplayLanguage/>
           </LanguageContext.Provider>
           
-          <Container>
-          <Hello title="helloooooooooooooo"/>
-          </Container>
-          <Welcome name="John" otherAge={64} />
-          <Counter />
-          <ClickCounter 
-          initialValue={0}
-          // onCounterChange={function onCounterChange(counter){
-            //   console.log(`${counter}`)
-            
-            // }}
-          />
-          <ClickTrucker />
-          <InteractiveWelcome />
-          <Login/>
-          <UncontrolledLogin/>
-          <TodoList
-          render={getName=>{
-            const [...name]= getName
-            return(
-              <ul>
-              <li>{name}</li>
-            </ul>
-          )
-        }}
-        ></TodoList>  
-       <GithubUser username="AntonioValerioCalo"/>
-        <GithubUserList/>
-        {/* <HookCounter/> */}
-        {/* <HookForm/>
-        <HookCounter/>
-       <FilteredList
-        users={[
-         {id:1,
-          name:"Antonio",
-          age:28,       
-        },
-        {
-          id:2,
-          name:"Verdiana",
-          age:27,
-        },
-        {
-          id:3,
-          name:"Marta",
-          age:8,
-        },
-        {
-          id:4,
-          name:"Alex",
-          age:5,
-        }
-
-      
-      
-      ]}
-       
-       />  */}
-
-       <CarDetails initialData={{
-              model: "",
-              year: "",
-              color: "",
-            }}/>
-      </div>
-    );
-  }
-}
-Welcome.defaultProps = {
-  name: "John",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  age: 28,
-};
+          </div> 
+    )
+    } 
