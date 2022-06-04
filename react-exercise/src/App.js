@@ -37,7 +37,7 @@ export function App () {
       <div>
         <Routes>
            <Route path="/" element={<Welcome name="Antonio" age={70}/>}/>
-           
+           <Route path="counter" element={<Counter/>}/>
 
            
         </Routes>
