@@ -19,6 +19,7 @@ import HookForm from "./HookForm";
 import { UseGithubuser } from "./UseGithubuser";
 import { FilteredList } from "./FilteredList";
 import { CarDetails } from "./CarDetails";
+import {Route,Routes} from "react-router-dom";
 
 
 
@@ -30,25 +31,17 @@ import { CarDetails } from "./CarDetails";
 
 
 export function App () {
-  const [language,setLanguage] = useState("en")
- const handleChangeLanguage=(event)=>{
-    setLanguage(
-      event.target.value
-    )
-  }
+
  
     return (
       <div>
-          <select value={language} onChange={handleChangeLanguage}>
-          <option value="en" >English</option>
-            <option value="it">Italiano</option>
-            <option value="de" >Deutsch</option>
-          </select>
-          
-         <LanguageContext.Provider value={language}>
-          <DisplayLanguage/>
-          </LanguageContext.Provider>
-          
-          </div> 
-    )
-    } 
+        <Routes>
+           <Route path="/" element={<Welcome name="Antonio" age={70}/>}/>
+           
+
+           
+        </Routes>
+        
+          </div>
+    ) 
+}
