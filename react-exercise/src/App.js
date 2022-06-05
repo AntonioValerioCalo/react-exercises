@@ -20,6 +20,7 @@ import { UseGithubuser } from "./UseGithubuser";
 import { FilteredList } from "./FilteredList";
 import { CarDetails } from "./CarDetails";
 import {Route,Routes} from "react-router-dom";
+import { ShowGithubUser } from "./ShowGithubUser";
 
 
 
@@ -35,12 +36,15 @@ export function App () {
  
     return (
       <div>
-        <Routes>
-           <Route path="/" element={<Welcome name="Antonio" age={70}/>}/>
-           <Route path="counter" element={<Counter/>}/>
 
+        <Routes>
+          
+           <Route path="/" element={<InteractiveWelcome name="Antonio" age={70}/>}/>
+           <Route path="/counter" element={<Counter/>}/>
+           <Route path="/user:Antonio"  element={<ShowGithubUser/>}></Route>      
            
         </Routes>
+        
         
           </div>
     ) 
