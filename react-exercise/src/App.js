@@ -43,9 +43,17 @@ export function App () {
            <Route path="/counter" element={<Counter/>}/>
            <Route path="/user:Antonio"  element={<ShowGithubUser/>}></Route>  
            <Route path="/Login" element={<Login/>}/>
+           <Route path="*" element={
+            <div>
+              <p>
+                doesn't exist
+              </p>
+              <Link to="/user:Antonio"></Link>
+            </div>
+           }
+           />
         </Routes>
-           <Link to="">Profile</Link>
-        
+           <Link to="/user:Antonio">Profile</Link>
         
           </div>
     ) 
