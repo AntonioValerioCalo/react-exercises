@@ -21,6 +21,7 @@ import { FilteredList } from "./FilteredList";
 import { CarDetails } from "./CarDetails";
 import {Link, Route,Routes} from "react-router-dom";
 import { ShowGithubUser } from "./ShowGithubUser";
+import {Nested} from "./Nested";
 
 
 
@@ -37,24 +38,31 @@ export function App () {
     return (
       <div>
 
+ 
+
         <Routes>
           
            <Route path="/" element={<InteractiveWelcome name="Antonio" age={70}/>}/>
-           <Route path="/counter" element={<Counter/>}/>
-           <Route path="/user:/item"  element={<GithubUserList/>}></Route>  
+           {/* <Route path="/counter" element={<Counter/>}/> */}
+           <Route path="/user:/item"  element={<GithubUserList/>}>
+            <Route path="Nested" element={<Nested/>}/>
+            <Route index element={<p>add a user and select it!</p>}/>
+          </Route>
            <Route path="/Login" element={<Login/>}/>
-           <Route path="*" element={
-            <div>
-              <p>
-                doesn't exist
-              </p>
-              <Link to="/user:Antonio"></Link>
-            </div>
-           }
-           />
+           {/* <Route path="*" element={
+             <div>
+             <p>
+             doesn't exist
+             </p>
+             <Link to="/user:Antonio"></Link>
+             </div>
+            }
+          /> */}
         </Routes>
+         
            <Link to="/user:/Item">Profile</Link>
         
           </div>
     ) 
 }
+//to create a button for navigate use useNavigate
