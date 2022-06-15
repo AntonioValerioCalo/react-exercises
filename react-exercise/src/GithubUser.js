@@ -1,9 +1,7 @@
-import useSWR from "swr"
 
-const fetcher=url=>fetch(url).then(response=>response.json())
-// import { UseGithubuser } from "./UseGithubuser";
+import { UseGithubuser } from "./UseGithubuser";
 export function GithubUser(){
-const {data, error}=useSWR(`https://api.github.com/users`,fetcher)
+const {data,error}=UseGithubuser("AntonioValerioCalo")
     // const {data,load,error} = UseGithubuser(username);
 // const [data , setData] = useState(null);
 
