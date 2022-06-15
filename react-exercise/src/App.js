@@ -11,7 +11,7 @@ import { UncontrolledLogin } from "./UncontrolledComponentLogin";
 import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 import { DisplayLanguage } from "./DisplayLanguage";
-import { LanguageContext } from "./LanguageContext";
+// import { LanguageContext } from "./LanguageContext";
 import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 import { HookCounter } from "./HookCounter";
@@ -37,17 +37,18 @@ export function App () {
  
     return (
       <div>
-
+         <Link to="user">User</Link>
  
 
         <Routes>
           
            <Route path="/" element={<InteractiveWelcome name="Antonio" age={70}/>}/>
            {/* <Route path="/counter" element={<Counter/>}/> */}
-           <Route path="/user:/item"  element={<GithubUserList/>}>
+           {/* <Route path="/user:/item"  element={<GithubUserList/>}>
             <Route path="Nested" element={<Nested/>}/>
             <Route index element={<p>add a user and select it!</p>}/>
-          </Route>
+          </Route> */}
+          <Route path="user" element={<GithubUser username="AntonioValerioCalo"/>}/>
            <Route path="/Login" element={<Login/>}/>
            {/* <Route path="*" element={
              <div>
