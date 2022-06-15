@@ -41,7 +41,7 @@ export function App () {
           
            <Route path="/" element={<InteractiveWelcome name="Antonio" age={70}/>}/>
            <Route path="/counter" element={<Counter/>}/>
-           <Route path="/user:Antonio"  element={<ShowGithubUser/>}></Route>  
+           <Route path="/user:/item"  element={<GithubUserList/>}></Route>  
            <Route path="/Login" element={<Login/>}/>
            <Route path="*" element={
             <div>
@@ -53,7 +53,7 @@ export function App () {
            }
            />
         </Routes>
-           <Link to="/user:Antonio">Profile</Link>
+           <Link to="/user:/Item">Profile</Link>
         
           </div>
     ) 
