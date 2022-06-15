@@ -65,3 +65,4 @@ export function App () {
           </div>
     ) 
 }
+//to create a button for navigate use useNavigate
