@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import useSWR from "swr";
 const fetcher =url=>fetch(url).then(response=>response.json())
 export const UseGithubuser = (username) => {
-const {data,error}=useSWR(`https://api.github.com/users`,fetcher)
+const {data,error,mutate}=useSWR(`https://api.github.com/users`,fetcher)
 
+  function handleRefresh(){
+       mutate()
+ }
   return{
     data,
     error,
-    
+    oneRefresh:handleRefresh,
   }
   // const [data, setData] = useState(null);
   // const [load, setLoad] = useState(false);

@@ -1,7 +1,7 @@
 
 import { UseGithubuser } from "./UseGithubuser";
 export function GithubUser(){
-const {data,error}=UseGithubuser("AntonioValerioCalo")
+const {data,error,oneRefresh}=UseGithubuser()
     // const {data,load,error} = UseGithubuser(username);
 // const [data , setData] = useState(null);
 
@@ -18,7 +18,8 @@ const {data,error}=UseGithubuser("AntonioValerioCalo")
 
 // },[username]) 
     return(
-     <div>
+        <div>
+         <button onClick={oneRefresh}>Refresh</button>
          {!data && !error && <h1>...loading</h1>}
          {error && <h1>there has been error</h1>}
         {data && !error && data.map((user)=>(<ul>
