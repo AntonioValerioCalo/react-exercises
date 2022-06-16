@@ -11,7 +11,7 @@ import { UncontrolledLogin } from "./UncontrolledComponentLogin";
 import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 import { DisplayLanguage } from "./DisplayLanguage";
-import { LanguageContext } from "./LanguageContext";
+// import { LanguageContext } from "./LanguageContext";
 import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 import { HookCounter } from "./HookCounter";
@@ -19,6 +19,9 @@ import HookForm from "./HookForm";
 import { UseGithubuser } from "./UseGithubuser";
 import { FilteredList } from "./FilteredList";
 import { CarDetails } from "./CarDetails";
+import {Link, Route,Routes} from "react-router-dom";
+import { ShowGithubUser } from "./ShowGithubUser";
+import {Nested} from "./Nested";
 
 
 
@@ -30,25 +33,37 @@ import { CarDetails } from "./CarDetails";
 
 
 export function App () {
-  const [language,setLanguage] = useState("en")
- const handleChangeLanguage=(event)=>{
-    setLanguage(
-      event.target.value
-    )
-  }
+
  
     return (
       <div>
-          <select value={language} onChange={handleChangeLanguage}>
-          <option value="en" >English</option>
-            <option value="it">Italiano</option>
-            <option value="de" >Deutsch</option>
-          </select>
+         <Link to="user">User</Link>
+ 
+
+        <Routes>
           
-         <LanguageContext.Provider value={language}>
-          <DisplayLanguage/>
-          </LanguageContext.Provider>
-          
-          </div> 
-    )
-    } 
+           <Route path="/" element={<InteractiveWelcome name="Antonio" age={70}/>}/>
+           {/* <Route path="/counter" element={<Counter/>}/> */}
+           {/* <Route path="/user:/item"  element={<GithubUserList/>}>
+            <Route path="Nested" element={<Nested/>}/>
+            <Route index element={<p>add a user and select it!</p>}/>
+          </Route> */}
+          <Route path="user" element={<GithubUser username="AntonioValerioCalo"/>}/>
+           <Route path="/Login" element={<Login/>}/>
+           {/* <Route path="*" element={
+             <div>
+             <p>
+             doesn't exist
+             </p>
+             <Link to="/user:Antonio"></Link>
+             </div>
+            }
+          /> */}
+        </Routes>
+         
+           <Link to="/user:/Item">Profile</Link>
+        
+          </div>
+    ) 
+}
+//to create a button for navigate use useNavigate

@@ -13,6 +13,7 @@ export class ClickTrucker extends React.Component {
   render(){
       return(
           <div>
+            
               <h1> trucker:{this.state.trucker }</h1>
               <button onClick={this.eventHandler} name="first">first</button>
               <button onClick={this.eventHandler} name="second">second</button>
