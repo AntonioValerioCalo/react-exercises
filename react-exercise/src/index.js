@@ -10,9 +10,9 @@ const root = document.querySelector("#root");
 
 
 
-store.subScribe(()=>{
+store.subscribe(()=>{
     console.log(store.getState());
 })
 
-store.dispatch(inncrementCounter(1))
+store.dispatch(inncrementCounter(22))
 

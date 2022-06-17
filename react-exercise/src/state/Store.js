@@ -1,7 +1,7 @@
-import {configureStore} from '@redux.js/toolkit'
+import {createStore} from 'redux'
 import{ counterReducer,inncrementCounter,decrementCounter,resetCounter} from "./CounterReducer"
 
- export const store = configureStore({reducer:counterReducer})
+ export const store = createStore(counterReducer)
  
  store.dispatch(inncrementCounter(1))
  store.dispatch(decrementCounter(6))
