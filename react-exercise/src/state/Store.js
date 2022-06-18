@@ -1,11 +1,11 @@
 import {createStore,combineReducers} from 'redux'
 import { counterState } from './CounterReducer'
 
-import { userReducer } from './TodosReducer'
+import { todosReducer} from './TodosReducer'
  
  const rootReducer=combineReducers({
     counter:counterState,
-    user:userReducer,
+    user:todosReducer,
 })
  export const store = createStore(rootReducer)
  

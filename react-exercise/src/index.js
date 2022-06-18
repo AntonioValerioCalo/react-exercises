@@ -4,7 +4,7 @@ import "./index.css";
 import Root from "./Root";
 import {store} from "./state/Store"
 import { counterState } from "./state/CounterReducer";
-import { addUser, userReducer } from "./state/TodosReducer";
+import { todosReducer} from "./state/TodosReducer";
 
 const root = document.querySelector("#root");
 // ReactDom.render(<Root />, root);
@@ -13,8 +13,9 @@ const root = document.querySelector("#root");
 
 store.subscribe(()=>{
     console.log(store.getState());
+   
 })
 
 store.dispatch(counterState.actions.increment(100))
-store.dispatch(addUser({id:1,names:"Antonio Valerio Calò",age:28}))
+store.dispatch(todosReducer.actions.add({id:3,names:"Antonio Valerio Calò",age:28}))
 
